@@ -58,6 +58,12 @@ class TestDynamicArray(unittest.TestCase):
         self.assertEqual(data.getSize(), 1)
         self.assertEqual(data.get(0), 5)
 
+    def test_popback_empty(self):
+        data = DynamicArray(2)
+
+        with self.assertRaises(IndexError):
+            data.popback()
+
     def test_get_out_of_bounds(self):
         data = DynamicArray(2)
 
