@@ -22,6 +22,9 @@ class DynamicArray:
         self.size +=1
 
     def popback(self) -> int:
+        if self.size == 0:
+            raise IndexError("Pop from empty array")
+
         self.size -= 1
         return self.data[self.size]
 
