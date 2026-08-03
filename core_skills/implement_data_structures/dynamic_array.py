@@ -1,5 +1,3 @@
-import unittest
-
 """
 Design a Dynamic Array (aka a resizable array) class, such as an ArrayList in Java or a vector in C++.
 
@@ -15,6 +13,7 @@ int getSize() will return the number of elements in the array.
 int getCapacity() will return the capacity of the array.
 If we call pushback(int n) but the array is full, we should resize() the array first.
 """
+import unittest
 
 class DynamicArray:
     def __init__(self, capacity: int):

@@ -1,3 +1,15 @@
+"""
+Design a Singly Linked List class.
+
+Your LinkedList class should support the following operations:
+
+LinkedList() will initialize an empty linked list.
+int get(int i) will return the value of the ith node (0-indexed). If the index is out of bounds, return -1.
+void insertHead(int val) will insert a node with val at the head of the list.
+void insertTail(int val) will insert a node with val at the tail of the list.
+bool remove(int i) will remove the ith node (0-indexed). If the index is out of bounds, return false, otherwise return true.
+int[] getValues() return an array of all the values in the linked list, ordered from head to tail.
+"""
 from typing import List
 
 
@@ -65,9 +77,9 @@ class LinkedList:
 def test_linked_list():
     ll = LinkedList()
 
-    ll.insertHead(1)        # [1]
-    ll.insertTail(2)        # [1,2]
-    ll.insertHead(0)        # [0,1,2]
+    ll.insertHead(1)
+    ll.insertTail(2)
+    ll.insertHead(0)
 
     assert ll.get(0) == 0
     assert ll.get(1) == 1
@@ -76,10 +88,10 @@ def test_linked_list():
 
     assert ll.getValues() == [0, 1, 2]
 
-    assert ll.remove(1) is True   # remove "1"
+    assert ll.remove(1) is True
     assert ll.getValues() == [0, 2]
 
-    assert ll.remove(10) is False  # out of bounds
+    assert ll.remove(10) is False
 
     print("All tests passed!")
 
