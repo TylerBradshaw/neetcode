@@ -54,10 +54,10 @@ class DynamicArray:
 
         self.data = new_arr
 
-    def getSize(self) -> int:
+    def get_size(self) -> int:
         return self.size
 
-    def getCapacity(self) -> int:
+    def get_capacity(self) -> int:
         return self.capacity
 
 
@@ -66,8 +66,8 @@ class TestDynamicArray(unittest.TestCase):
     def test_initial_state(self):
         data = DynamicArray(4)
 
-        self.assertEqual(data.getSize(), 0)
-        self.assertEqual(data.getCapacity(), 4)
+        self.assertEqual(data.get_size(), 0)
+        self.assertEqual(data.get_capacity(), 4)
 
     def test_pushback(self):
         data = DynamicArray(2)
@@ -75,7 +75,7 @@ class TestDynamicArray(unittest.TestCase):
         data.pushback(10)
         data.pushback(20)
 
-        self.assertEqual(data.getSize(), 2)
+        self.assertEqual(data.get_size(), 2)
         self.assertEqual(data.get(0), 10)
         self.assertEqual(data.get(1), 20)
 
@@ -96,8 +96,8 @@ class TestDynamicArray(unittest.TestCase):
 
         data.pushback(3)
 
-        self.assertEqual(data.getCapacity(), 4)
-        self.assertEqual(data.getSize(), 3)
+        self.assertEqual(data.get_capacity(), 4)
+        self.assertEqual(data.get_size(), 3)
 
         self.assertEqual(data.get(0), 1)
         self.assertEqual(data.get(1), 2)
@@ -112,7 +112,7 @@ class TestDynamicArray(unittest.TestCase):
         value = data.popback()
 
         self.assertEqual(value, 10)
-        self.assertEqual(data.getSize(), 1)
+        self.assertEqual(data.get_size(), 1)
         self.assertEqual(data.get(0), 5)
 
     def test_popback_empty(self):
@@ -155,7 +155,7 @@ class TestDynamicArray(unittest.TestCase):
         for i in range(100):
             data.pushback(i)
 
-        self.assertEqual(data.getSize(), 100)
+        self.assertEqual(data.get_size(), 100)
 
         for i in range(100):
             self.assertEqual(data.get(i), i)

@@ -16,7 +16,7 @@ from typing import List
 
 
 class Solution:
-    def removeElement(self, nums: List[int], val: int) -> int:
+    def remove_element(self, nums: List[int], val: int) -> int:
         k = 0
 
         for i in range(len(nums)):
@@ -34,7 +34,7 @@ val = int(input("Enter val to remove: "))
 expected_nums = sorted(number for number in nums if number != val)
 
 solution = Solution()
-k = solution.removeElement(nums, val)
+k = solution.remove_element(nums, val)
 
 assert k == len(expected_nums)
 

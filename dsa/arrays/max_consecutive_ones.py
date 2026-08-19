@@ -4,7 +4,7 @@ You are given a binary array nums, return the maximum number of consecutive 1's 
 from typing import List
 
 class Solution:
-    def findMaxConsecutiveOnes(self, nums: List[int]) -> int:
+    def find_max_consecutive_ones(self, nums: List[int]) -> int:
         count = 0
         max_count = 0
 
@@ -21,12 +21,12 @@ class Solution:
 def test_find_max_consecutive_ones():
     solution = Solution()
 
-    assert solution.findMaxConsecutiveOnes([1, 1, 0, 1, 1, 1]) == 3
-    assert solution.findMaxConsecutiveOnes([1, 0, 1, 1, 0, 1]) == 2
-    assert solution.findMaxConsecutiveOnes([0, 0, 0]) == 0
-    assert solution.findMaxConsecutiveOnes([1, 1, 1, 1]) == 4
-    assert solution.findMaxConsecutiveOnes([1]) == 1
-    assert solution.findMaxConsecutiveOnes([0]) == 0
+    assert solution.find_max_consecutive_ones([1, 1, 0, 1, 1, 1]) == 3
+    assert solution.find_max_consecutive_ones([1, 0, 1, 1, 0, 1]) == 2
+    assert solution.find_max_consecutive_ones([0, 0, 0]) == 0
+    assert solution.find_max_consecutive_ones([1, 1, 1, 1]) == 4
+    assert solution.find_max_consecutive_ones([1]) == 1
+    assert solution.find_max_consecutive_ones([0]) == 0
 
     print("passed")
 

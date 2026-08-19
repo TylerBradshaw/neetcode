@@ -35,13 +35,13 @@ class LinkedList:
 
         return curr.val
 
-    def insertHead(self, val: int) -> None:
+    def insert_head(self, val: int) -> None:
         new_node = ListNode(val)
         new_node.next = self.dummy.next
         self.dummy.next = new_node
         self.size += 1
 
-    def insertTail(self, val: int) -> None:
+    def insert_tail(self, val: int) -> None:
         new_node = ListNode(val)
         curr = self.dummy
 
@@ -64,7 +64,7 @@ class LinkedList:
         self.size -= 1
         return True
 
-    def getValues(self) -> List[int]:
+    def get_values(self) -> List[int]:
         values = []
         curr = self.dummy.next
 
@@ -77,19 +77,19 @@ class LinkedList:
 def test_linked_list():
     ll = LinkedList()
 
-    ll.insertHead(1)
-    ll.insertTail(2)
-    ll.insertHead(0)
+    ll.insert_head(1)
+    ll.insert_tail(2)
+    ll.insert_head(0)
 
     assert ll.get(0) == 0
     assert ll.get(1) == 1
     assert ll.get(2) == 2
     assert ll.get(3) == -1
 
-    assert ll.getValues() == [0, 1, 2]
+    assert ll.get_values() == [0, 1, 2]
 
     assert ll.remove(1) is True
-    assert ll.getValues() == [0, 2]
+    assert ll.get_values() == [0, 2]
 
     assert ll.remove(10) is False
 
