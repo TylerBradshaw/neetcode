@@ -17,13 +17,23 @@ from typing import List
 
 class Solution:
     def calculate_points(self, operations: List[str]) -> int:
-        x = []
+        record = []
         for i in operations:
-            if i == '+':
-                # add previous 2 scores
-            if i == 'D':
-                # double prev score
-            if i == 'C':
-                # remove prev score
+            if not isinstance(i, str):
+                raise ValueError(f"Invalid operation: {i!r}")
+            if i == "+":
+                record.append(record[-1] + record[-2])
+            elif i == "D":
+                record.append(2 * record[-1])
+            elif i == "C":
+                record.pop()
             else:
-                # score (make int)
+                try:
+                    points = int(i)
+                except ValueError:
+                    raise ValueError(f"Invalid operation: {i!r}. ")
+
+                record.append(points)
+        return sum(record)
+
+
