@@ -10,5 +10,18 @@ Return true if s is a valid string, and false otherwise.
 """
 
 class Solution:
-    def isValid(self, s: str) -> bool:
-        matches = {"(" : ")", "[" : "]", "{" : "}"}
+    def is_valid(self, s: str) -> bool:
+        if len(s) % 2:
+            return False
+
+        stack = []
+        close_to_open = {")": "(", "]": "[", "}": "{"}
+
+        for c in s:
+            if c in close_to_open:
+                if not stack or stack.pop() != close_to_open[c]:
+                    return False
+            else:
+                stack.append(c)
+
+        return not stack
